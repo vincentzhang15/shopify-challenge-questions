@@ -21,7 +21,8 @@ import mysql.connector
 from front import front_page
 import os
 
-from app import app, dbconn
+from app import app
+import dbconn
 
 
 @app.route('/bdi')

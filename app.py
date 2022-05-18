@@ -15,10 +15,10 @@ PASS = "root"
 
 def dbconn():
     mydb = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password=f"{PASS}",
-        database="learning"
+      host="localhost",
+      user="root",
+      password=f"{PASS}",
+      database="root"
     )
     return mydb
 
