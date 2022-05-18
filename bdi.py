@@ -23,7 +23,7 @@ import os
 
 from app import app
 import dbconn
-
+dbconn = dbconn.dbconn
 
 @app.route('/bdi')
 def bdi_list():
@@ -79,15 +79,15 @@ def getBdiItem(item_id=""):
     db = dbconn()
     cursor = db.cursor()
     if len(item_id) < 1:
-        sql = "select id, name, category, price, amount, date_created, last_updated from bdiInventoryItems order by id desc limit 1 ;"
+        sql = "select id, name, category, price, amount, date_created, last_updated, comment from bdiInventoryItems order by id desc limit 1 ;"
     else:
-        sql = "select id, name, category, price, amount, date_created, last_updated from bdiInventoryItems where id=" + str(item_id) + " limit 1 ;"
+        sql = "select id, name, category, price, amount, date_created, last_updated, comment from bdiInventoryItems where id=" + str(item_id) + " limit 1 ;"
     cursor.execute(sql)
     result = cursor.fetchall()
     items = []
     for x in result:
         print(x)
-        items += [{'id':x[0], 'name':x[1], 'category':x[2], 'price':x[3], 'amount':x[4], 'created':x[5], 'updated':x[6] }]
+        items += [{'id':x[0], 'name':x[1], 'category':x[2], 'price':x[3], 'amount':x[4], 'created':x[5], 'updated':x[6], 'comment':x[7] }]
     cursor.close()
     return items
 
