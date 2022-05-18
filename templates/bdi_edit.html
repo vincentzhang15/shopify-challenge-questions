@@ -1,0 +1,41 @@
+
+{# [START bdi_create] #}
+{% extends "bdi.html" %}
+
+{% block article %}
+<h1>Edit inventory item</h1>
+<form method="POST" enctype="multipart/form-data">
+    <table>
+        <tr>
+          <td><label for="id">ID:</label></td>
+          <td>{{items[0].id}}</td>
+          <td><label for="name">Name:</label></td>
+          <td><input type="text" name="name" id="name" value="{{items[0].name}}" class="form-control"  maxlength="8" size="8"/></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><label for="category">Category:</label></td>
+          <td><input type="text" name="category" id="category" value="{{items[0].category}}" class="form-control"  maxlength="8" size="8"/></td>
+        </tr>
+        <tr>
+          <td><label for="created">Created:</label></td>
+          <td>{{items[0].created}}</td>
+          <td><label for="price">Price:</label></td>
+          <td><input type="text" name="price" id="price" value="{{items[0].price}}" class="form-control"  maxlength="8" size="8"/></td>
+        </tr>
+        <tr>
+          <td><label for="updated">Updated:</label></td>
+          <td>{{items[0].updated}}</td>
+          <td><label for="amount">Amount:</label></td>
+           <td><input type="text" name="amount" id="amount" value="{{items[0].amount}}" class="form-control"  maxlength="8" size="8"/></td>
+        </tr>
+        <tr colspan="4"><td></tr>
+      <tr><td colspan="4" style="text-align:right"><button type="submit" class="btn btn-success">Update This Item</button></td></tr>
+    </table>
+</form>        
+
+{% if error %}<br><p> Error: {{error}} </p>{% endif %}
+
+{% endblock %}
+{# [END bid_create] #}    

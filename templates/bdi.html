@@ -1,0 +1,52 @@
+
+{# [START front] #}
+{% extends "base.html" %}
+
+{% block content %}
+
+
+    <header>
+        <h2>Developer Intern Challenge Question</h2>
+    </header>
+      
+      <section>
+        <nav>
+          <table>
+            <caption><nobr>Basic CRUD Functionality</nobr></caption>
+            <tr><td><label><a href="/bdi/create" class="btn btn-success btn-sm">
+              <i class="glyphicon glyphicon-plus"></i>
+              Create inventory item
+            </a></label></td></tr>
+            <tr><td><label><a href="/bdi" class="btn btn-success btn-sm">
+              <i class="glyphicon glyphicon-th-list"></i>
+              Inventory item list
+            </a></label></td></tr>
+          </table>
+          <table>
+              <caption><nobr>One of the options</nobr></caption>
+            <tr><td><label><a href="/bdi/undel" class="btn btn-success btn-sm">
+              <i class="glyphicon glyphicon-remove"></i>
+              Undelete item
+            </a></label></td></tr>
+            <tr><td><label>
+              <i class="glyphicon glyphicon-wrench"></i>
+              [TODO] Create warehouse location
+            </label></td></tr>
+            <tr><td><label>
+              <i class="glyphicon glyphicon-wrench"></i>
+              [TODO] Create shipment
+            </label></td></tr>
+          </table>
+        </nav>
+        
+        <article>
+          {% block article %}{% endblock %}
+        </article>
+      </section>
+      
+      <footer>
+        <p>Footer</p>
+      </footer>
+        
+{% endblock %}
+{# [END front] #}    

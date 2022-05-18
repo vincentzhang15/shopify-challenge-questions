@@ -1,0 +1,44 @@
+
+{# [START bdi_list] #}
+{% extends "bdi.html" %}
+
+{% block article %}
+<h1>Inventory item list</h1>
+<form method="POST" enctype="multipart/form-data">
+  <table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th>Created</th>
+        <th>Updated</th>
+        <th></th>
+    </tr>
+    {% for item in items %}    
+    <tr>
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.category}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.amount}}</td>
+          <td>{{item.created}}</td>
+          <td>{{item.updated}}</td>
+          <td>
+            <label><a href="/bdi/{{item.id}}/edit" class="btn btn-success btn-sm">
+                <i class="glyphicon glyphicon-pencil"></i>
+              </a></label>
+            <label><a href="/bdi/{{item.id}}/delete" class="btn btn-success btn-sm">
+                <i class="glyphicon glyphicon-remove"></i>
+              </a></label>
+          </td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>        
+
+{% if error %}<br><p> Error: {{error}} </p>{% endif %}
+
+{% endblock %}
+{# [END bid_list] #}    
