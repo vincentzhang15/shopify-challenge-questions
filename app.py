@@ -9,7 +9,7 @@ app.testing = False
 
 @app.route('/')
 def site():
-    return front_page("root")
+    return front_page("bdi")
 
 PASS = "root"
 
