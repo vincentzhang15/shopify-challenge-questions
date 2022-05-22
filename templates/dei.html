@@ -3,8 +3,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-
     <header>
         <h2>Data Engineer Intern Challenge Question</h2>
     </header>
@@ -12,58 +10,34 @@
       <section>
         <nav>
           <table>
-            <caption><nobr>Basic CRUD Functionality</nobr></caption>
-            <tr><td><label for="tempr"><a href="/dei/create" class="btn btn-success btn-sm">
-              <i class="glyphicon glyphicon-plus"></i>
-              Create inventory item
-            </a></label></td></tr>
-            <tr><td><label for="tempr"><a href="/dei/edit" class="btn btn-success btn-sm">
-              <i class="glyphicon glyphicon-pencil"></i>
-              Edit inventory item
-            </a></label></td></tr>
-            <tr><td><label for="tempr"><a href="/dei/delete" class="btn btn-success btn-sm">
-              <i class="glyphicon glyphicon-remove"></i>
-              Delete inventory item
-            </a></label></td></tr>
-            <tr><td><label for="tempr"><a href="/dei" class="btn btn-success btn-sm">
-              <i class="glyphicon glyphicon-th-list"></i>
-              Inventory item list
+            <caption><nobr>Functionality</nobr></caption>
+
+            <tr><td><label for="tempr"><a href="/dei/add" class="btn btn-success btn-sm">
+              <i class="glyphicon glyphicon-plus"></i> ADD one image to the repository
             </a></label></td></tr>
 
+            <tr><td><label for="tempr"><a href="/dei/addmore" class="btn btn-success btn-sm">
+              <i class="glyphicon glyphicon-plus"></i> ADD bulk / enormous image to the repository
+            </a></label></td></tr>
+            
+            <tr><td><label for="tempr"><a href="/dei" class="btn btn-success btn-sm">
+              <i class="glyphicon glyphicon-th-list"></i> List random images in the repository
+            </a></label></td></tr>
+
+            <tr><td><label for="tempr"><a href="/dei/search" class="btn btn-success btn-sm">
+              <i class="glyphicon glyphicon-search"></i> Search image in the repository
+            </a></label></td></tr>
           </table>
+
+          <table>
+            <caption><nobr>Login as User ID</nobr></caption>
+            <td><input type="text" name="userid" id="userid" value="" class="form-control"  maxlength="8" size="8"/></td>
+          </table>
+
         </nav>
         
         <article>
-          <h1>Create inventory item</h1>
-          <form method="POST" enctype="multipart/form-data">
-            <table>
-                <tr>
-                    <td><label for="tempr">Name:</label></td>
-                    <td></td>
-                    <td><input type="text" name="name" id="name" value="" class="form-control"  maxlength="8" size="8"/></td>
-                </tr>
-                <tr>
-                    <td><label for="preci">Category:</label></td>
-                    <td></td>
-                    <td><input type="text" name="preci1" id="preci1" value="" class="form-control"  maxlength="8" size="8"/></td>
-                </tr>
-                <tr>
-                    <td><label for="Gas">Price:</label></td>
-                    <td></td>
-                    <td><input type="text" name="gas1" id="gas1" value="" class="form-control"  maxlength="8" size="8"/></td>
-                </tr>
-                <tr>
-                    <td><label for="traff">Amount:</label></td>
-                    <td></td>
-                    <td><input type="text" name="traff1" id="traff1" value="" class="form-control"  maxlength="8" size="8"/></td>
-                </tr>
-                <tr><td></td><td> &nbsp;  &nbsp; </td><td></td></tr>
-              <tr><td colspan="3" align="center"><button type="submit" class="btn btn-success">Create Inventory Item</button></td></tr>
-            </table>
-          </form>        
-
-          <br>
-          <p>Create inventory item</p>
+          {% block article %}{% endblock %}
         </article>
       </section>
       

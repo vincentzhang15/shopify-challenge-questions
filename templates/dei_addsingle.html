@@ -1,0 +1,17 @@
+
+{# [START bdi_create] #}
+{% extends "dei_add.html" %}
+
+{% block article_header %}
+<h1>Add single image</h1>
+{% endblock %}
+{% block file_selector %}
+      <tr>
+          <td><label for="image">Image:</label></td>
+          <td></td>
+          <td><input type="file" name="image" id="image" class="form-control"/></td>
+      </tr>
+      <tr><td></td><td> &nbsp;  &nbsp; </td><td></td></tr>
+    <tr><td colspan="3"><button type="submit" class="btn btn-success">Add image</button></td></tr>
+{% endblock %}
+{# [END bid_create] #}    

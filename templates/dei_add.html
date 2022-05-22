@@ -1,0 +1,37 @@
+
+{# [START bdi_create] #}
+{% extends "dei.html" %}
+
+{% block article %}
+{% block article_header %}{% endblock %}
+<form name="myForm" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
+    <div id="form_error"></div>
+  <table>
+      <tr>
+          <td><label for="name">Name:</label></td>
+          <td></td>
+          <td><input type="text" name="name" id="name" value="" class="form-control"  maxlength="99" size="8"/></td>
+      </tr>
+      <tr>
+          <td><label for="tags">tag:</label></td>
+          <td></td>
+          <td><input type="text" name="tags" id="tags" value="" class="form-control"  maxlength="99" size="8"/></td>
+      </tr>
+      <tr>
+        <td><label for="access">Access:</label></td>
+        <td></td>
+        <td>
+            <select id="access" name="access">
+                <option value="public" selected="selected">Public</option>
+                <option value="private">Private</option>
+              </select>
+        </td>
+    </tr>
+    {% block file_selector %}{% endblock %}
+  </table>
+</form>        
+
+{% if error %}<br><p> Error: {{error}} </p>{% endif %}
+
+{% endblock %}
+{# [END bid_create] #}    
