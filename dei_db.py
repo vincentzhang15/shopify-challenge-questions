@@ -1,5 +1,5 @@
 import mysql.connector
-from app import dbconn
+from dbconn import dbconn
 
 def get_next_imageid():
     db = dbconn()
@@ -85,7 +85,7 @@ def upload_image_file(img,name,tags,access):
 
     imageid = get_next_imageid()
 
-    imagepath = "F:\\tempimages\\"
+    imagepath = "/tmp/images/"
     filename = imagepath + "image."+str(imageid)+"."+ext
     
     print("..... image filename .....  ", filename)
@@ -132,6 +132,8 @@ def get_random_images():
     return images
 
 def get_image_tags(images):
+    if len(images) == 0:
+      return images
     print("get_image_tags for x in images) images = ", images)
     sql = "select imageid,tagid,name from deiimagetags left join deitags on tagid=id where imageid in "
     i = 0

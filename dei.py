@@ -34,7 +34,6 @@ from flask import request, url_for
 from flask import send_from_directory
 
 from front import front_page
-from form import form_page
 import os
 
 from app import app
@@ -80,7 +79,7 @@ def dei_upload_images():
 @app.route('/dei/image/<imageid>/<ext>', methods=['GET'])
 def dei_image(imageid,ext):
     def read_image():
-        f = open("F:\\tempimages\\image."+imageid+"."+ext, "rb")
+        f = open("/tmp/images/image."+imageid+"."+ext, "rb")
         return  f.read()
 
     response = make_response(read_image(), 200)
